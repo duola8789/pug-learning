@@ -62,7 +62,7 @@ body
 			when 2: p you have 2 friends
 			default: p you have a lot of friends
 		- for (var i = 0; i<3; i++)
-			p=i+'for'
+		p=i + 'for'
 		ul
 			each val,index in [1,2,3,4,5]
 				li #{val + 'index' + index}
@@ -107,5 +107,11 @@ body
 				p='剩余参数是' + other
 		p ------------------
 		+rest('old_chow', 1,2,3,4,5)
+		<span>123</span>
+		label: input(type="text")/
 	script
 		include say.js
+	script.
+		(function test() {
+			alert(123)
+		})()
