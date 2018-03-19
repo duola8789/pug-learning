@@ -1,0 +1,277 @@
+doctype html
+head
+	meta(charset="UTF-8")
+	title 商品详情图
+	//TODO: 替换变量
+	- var URL_PREFIX = '../git'
+	- var __resourceBaseUrl__ = './资源库';
+	- var __testUrl__ = './测试库';
+	- var introName = '超软小鸡萌萌哒';
+	- var introContent = '简介简介简介一堆文字，简介简介简介一堆文字，简介简介简介一堆文字。简介简介简介一堆文字，简介简介简介一堆文字，简介简介简介一堆文字。';
+	- var wordIntroTitle = '超软小鸡萌萌哒';
+	- var wordIntroText = '尺寸：21x13\n款式：三种表情随机发\n其他：七个工作日发货';
+	style.
+		html,
+		body,
+		.container * {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		@font-face {
+			font-family: pf-regular;
+			src: url('#{URL_PREFIX}/assets/remote/公共资源/Fonts/PingFang-SC-Regular.otf')
+		}
+		@font-face {
+			font-family: pf-bold;
+			src: url('#{URL_PREFIX}/assets/remote/公共资源/Fonts/PingFang-SC-Semibold.ttf')
+		}
+		@font-face {
+			font-family: fzdb;
+			src: url('#{URL_PREFIX}/assets/remote/公共资源/Fonts/FZDBSJW.ttf')
+		}
+		.image {
+			width: 100%
+		}
+		.container {
+			width: 710px;
+			padding: 18px 0 0;
+			font-family: pf-regular, sans-serif;
+			background: #FAFAFA;
+			overflow: hidden;
+		}
+		.intro {
+			width: 100%;
+			padding: 85px 0 56px;
+			background-image: url('#{__resourceBaseUrl__}/type2-intro-bg1-1.png'),
+			url('#{__resourceBaseUrl__}/type2-intro-bg1-3.png'),
+			url('#{__resourceBaseUrl__}/type2-intro-bg1-2.png');
+			background-position: top center,
+			bottom center,
+			center 150px;
+			background-size: contain;
+			background-repeat: no-repeat,
+			no-repeat,
+			repeat-y;
+			text-align: center;
+		}
+		.intro .image {
+			width: 428px;
+		}
+		.intro .name {
+			width: 394px;
+			margin: 20px auto 0;
+			text-align: center;
+			background: url('#{__resourceBaseUrl__}/type2-intro-bg2.png') no-repeat center center;
+			font-family: fzdb, sans-serif;
+			font-size: 34px;
+			color: #000;
+		}
+		.intro .content {
+			width: 470px;
+			margin: 24px auto 0;
+			text-align: center;
+			font-family: pf-regular, sans-serif;
+			font-size: 26px;
+			line-height: 37px;
+			color: #666;
+		}
+		.word-intro {
+			font-size: 0;
+			padding: 20px 0;
+		}
+		.word-intro .image {
+			width: 220px;
+			margin-left: 70px;
+			vertical-align: middle;
+		}
+		.word-content {
+			display: inline-block;
+			width: 314px;
+			margin: 70px 0 70px 80px;
+			font-size: 26px;
+			vertical-align: middle;
+			color: #333;
+		}
+		.word-content-title {
+			font-family: fzdb, sans-serif;
+			font-size: 38px;
+			margin-bottom: 56px;
+		}
+		.word-content-text {
+			font-family: pf-bold, sans-serif;
+			font-size: 28px;
+			line-height: 47px;
+		}
+		.big-pic-item:nth-child(2n+1) {
+			width: 100%;
+			height: 656px;
+			padding-top: 148px;
+			background: url('#{__resourceBaseUrl__}/type2-bigPic-bg1.png') no-repeat left top;
+		}
+		.big-pic-item:nth-child(2n+1) .image-container {
+			margin: 0 auto;
+			width: 650px;
+			height: 470px;
+			border-radius: 10px;
+			overflow: hidden;
+		}
+		.big-pic-item:nth-child(2n) {
+			margin: 30px 0;
+		}
+		.big-pic-item:nth-child(2n) .image-container {
+			margin: 0 auto;
+			width: 650px;
+		}
+		.big-pic-item .image {
+			border-radius: 10px;
+		}
+		.detail {
+			width: 100%;
+		}
+		.detail-title {
+			width: 100%;
+			height: 140px;
+			padding: 75px 0 0 390px;
+			background: url('#{__resourceBaseUrl__}/type2-detail-bg1.png') no-repeat right center;
+			font-family: fzdb, sans-serif;
+			font-size: 44px;
+			color: #333;
+		}
+		.detail-text {
+			font-family: fzdb, sans-serif;
+			font-size: 34px;
+			color: #333;
+		}
+		.detail-text:before {
+			display: inline-block;
+			content: '';
+			width: 26px;
+			height: 26px;
+			margin-right: 20px;
+			border-radius: 50%;
+			background: #b4d6cf;
+		}
+		.detail-item1 {
+			position: relative;
+			width: 100%;
+			height: 580px;
+			overflow: hidden;
+		}
+		.detail-item1 .detail-bg-container {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: url('#{__resourceBaseUrl__}/type2-detail-bg2.png') no-repeat center center;
+			z-index: 2;
+		}
+		.detail-item1 .image {
+			position: absolute;
+			left: 35px;
+			top: 0;
+			z-index: 1;
+			height: 100%;
+		}
+		.detail-item1 .detail-text {
+			position: absolute;
+			top: 250px;
+			right: 30px;
+			z-index: 2;
+		}
+		.detail-item2 {
+			margin: 40px 0 40px;
+		}
+		.detail-item2 .detail-image-container {
+			width: 532px;
+			margin-left: 148px;
+			padding-right: 14px;
+			padding-bottom: 18px;
+			border-radius: 10px;
+			background: #b4d6cf;
+			font-size: 0;
+		}
+		.detail-item2 .image {
+			border-radius: 10px;
+		}
+		.detail-item2 .detail-text {
+			margin: 26px 0 0 148px;
+		}
+		.detail-item3 {
+			position: relative;
+			width: 100%;
+			height: 510px;
+			margin-bottom: 50px;
+			overflow: hidden;
+		}
+		.detail-item3 .detail-bg-container {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: url('#{__resourceBaseUrl__}/type2-detail-bg3.png') no-repeat center center;
+			z-index: 2;
+		}
+		.detail-item3 .image {
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 1;
+			height: 100%;
+		}
+		.detail-item3 .detail-text {
+			position: absolute;
+			bottom: 0;
+			left: 25px;
+			z-index: 2;
+		}
+		.footer{
+			width: 100%;
+			height:120px;
+			background: url('#{__resourceBaseUrl__}/type2-footer-bg1.png') no-repeat center top;
+			overflow: hidden;
+		}
+		.footer-text{
+			margin-top: 50px;
+			font-family: fzdb, sans-serif;
+			font-size: 26px;
+			color: #b4d6cf;
+			text-align: center;
+		}
+body
+	div.container
+		div.intro
+			img.image(src=__testUrl__ + "/test1.png" alt="商品配图")
+			p.name #{introName}
+			p.content #{introContent}
+		div.word-intro
+			img.image(src=__testUrl__ + "/test2.png" alt="文字描述配图")
+			div.word-content
+				p.word-content-title #{wordIntroTitle}
+				each text in (wordIntroText || '').split(/\n+/)
+					p.word-content-text  #{text}
+		div.big-pic
+			div.big-pic-item
+				div.image-container
+					img.image(src=__testUrl__ + "/test3.png" alt="文字描述配图")
+			div.big-pic-item
+				div.image-container
+					img.image(src=__testUrl__ + "/test8.png" alt="文字描述配图")
+		div.detail
+			p.detail-title 产品细节
+			div.detail-item1
+				div.detail-bg-container
+				img.image(src=__testUrl__ + "/test7.png" alt="文字描述配图")
+				p.detail-text Q萌大眼
+			div.detail-item2
+				div.detail-image-container
+					img.image(src=__testUrl__ + "/test9.png" alt="文字描述配图")
+				p.detail-text 性感长耳
+			div.detail-item3
+				div.detail-bg-container
+				img.image(src=__testUrl__ + "/test7.png" alt="文字描述配图")
+				p.detail-text 精致做工
+		div.footer
+			p.footer-text 祝你好运~
