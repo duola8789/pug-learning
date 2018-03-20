@@ -174,12 +174,19 @@ head
 			background: url('#{__resourceBaseUrl__}/type3-detail-bg2.png') no-repeat center center;
 			z-index: 2;
 		}
-		.detail-item1 .image {
+		.detail-item1 .clipper {
+			width: 450px;
+			height: 550px;
 			position: absolute;
 			left: 35px;
+			top: 18px;
+			overflow: hidden;
+		}
+		.detail-item1 .image {
+			position: absolute;
+			left: 0;
 			top: 0;
 			z-index: 1;
-			height: 100%;
 		}
 		.detail-item1 .detail-text {
 			position: absolute;
@@ -221,12 +228,19 @@ head
 			background: url('#{__resourceBaseUrl__}/type3-detail-bg3.png') no-repeat center center;
 			z-index: 2;
 		}
+		.detail-item3 .clipper {
+			width: 525px;
+			height: 430px;
+			position: absolute;
+			left: 26px;
+			top: 10px;
+			overflow: hidden;
+		}
 		.detail-item3 .image {
 			position: absolute;
 			left: 0;
 			top: 0;
 			z-index: 1;
-			height: 100%;
 		}
 		.detail-item3 .detail-text {
 			position: absolute;
@@ -272,7 +286,8 @@ body
 			p.detail-title 产品细节
 			div.detail-item1
 				div.detail-bg-container
-				img.image(src=__testUrl__ + "/test6.png" alt="文字描述配图")
+				div.clipper
+					img.image(src=__testUrl__ + "/test4.jpg" alt="文字描述配图")
 				p.detail-text 正版玩偶
 			div.detail-item2
 				div.detail-image-container
@@ -280,7 +295,8 @@ body
 				p.detail-text 精致礼盒
 			div.detail-item3
 				div.detail-bg-container
-				img.image(src=__testUrl__ + "/test6.png" alt="文字描述配图")
+				div.clipper
+					img.image(src=__testUrl__ + "/test6.png" alt="文字描述配图")
 				p.detail-text 精致做工
 		div.footer
 			p.footer-text 祝你好运~

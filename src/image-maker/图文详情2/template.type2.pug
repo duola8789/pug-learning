@@ -167,12 +167,19 @@ head
 			background: url('#{__resourceBaseUrl__}/type2-detail-bg2.png') no-repeat center center;
 			z-index: 2;
 		}
-		.detail-item1 .image {
+		.detail-item1 .clipper {
+			width: 450px;
+			height: 550px;
 			position: absolute;
 			left: 35px;
+			top: 18px;
+			overflow: hidden;
+		}
+		.detail-item1 .image {
+			position: absolute;
+			left: 0;
 			top: 0;
 			z-index: 1;
-			height: 100%;
 		}
 		.detail-item1 .detail-text {
 			position: absolute;
@@ -214,12 +221,19 @@ head
 			background: url('#{__resourceBaseUrl__}/type2-detail-bg3.png') no-repeat center center;
 			z-index: 2;
 		}
+		.detail-item3 .clipper {
+			width: 525px;
+			height: 430px;
+			position: absolute;
+			left: 26px;
+			top: 10px;
+			overflow: hidden;
+		}
 		.detail-item3 .image {
 			position: absolute;
 			left: 0;
 			top: 0;
 			z-index: 1;
-			height: 100%;
 		}
 		.detail-item3 .detail-text {
 			position: absolute;
@@ -227,13 +241,13 @@ head
 			left: 25px;
 			z-index: 2;
 		}
-		.footer{
+		.footer {
 			width: 100%;
-			height:120px;
+			height: 120px;
 			background: url('#{__resourceBaseUrl__}/type2-footer-bg1.png') no-repeat center top;
 			overflow: hidden;
 		}
-		.footer-text{
+		.footer-text {
 			margin-top: 50px;
 			font-family: fzdb, sans-serif;
 			font-size: 26px;
@@ -255,7 +269,7 @@ body
 		div.big-pic
 			div.big-pic-item
 				div.image-container
-					img.image(src=__testUrl__ + "/test3.png" alt="文字描述配图")
+					img.image(src=__testUrl__ + "/test5.png" alt="文字描述配图")
 			div.big-pic-item
 				div.image-container
 					img.image(src=__testUrl__ + "/test8.png" alt="文字描述配图")
@@ -263,7 +277,8 @@ body
 			p.detail-title 产品细节
 			div.detail-item1
 				div.detail-bg-container
-				img.image(src=__testUrl__ + "/test7.png" alt="文字描述配图")
+				div.clipper
+					img.image(src=__testUrl__ + "/test4.jpg" alt="文字描述配图")
 				p.detail-text Q萌大眼
 			div.detail-item2
 				div.detail-image-container
@@ -271,7 +286,8 @@ body
 				p.detail-text 性感长耳
 			div.detail-item3
 				div.detail-bg-container
-				img.image(src=__testUrl__ + "/test7.png" alt="文字描述配图")
+				div.clipper
+					img.image(src=__testUrl__ + "/test7.png" alt="文字描述配图")
 				p.detail-text 精致做工
 		div.footer
 			p.footer-text 祝你好运~
