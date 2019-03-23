@@ -1,0 +1,87 @@
+{
+  "name": "普通",
+  "version": "0.1.0",
+  "width": 720,
+  "propertys": [
+    {
+      "key": "intro",
+      "label": "简介",
+      "type": "object",
+      "itemMetas": [
+        {
+          "key": "image",
+          "label": "配图",
+          "type": "image"
+        },
+        {
+          "key": "name",
+          "label": "商品名称",
+          "type": "text"
+        },
+        {
+          "key": "content",
+          "label": "简介内容",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "key": "wordIntro",
+      "label": "文字描述",
+      "type": "object",
+      "itemMetas": [
+        {
+          "key": "image",
+          "label": "配图",
+          "type": "image"
+        },
+        {
+          "key": "name",
+          "label": "商品名称",
+          "type": "text"
+        },
+        {
+          "key": "content",
+          "label": "简介内容",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "key": "bigPic",
+      "label": "大图",
+      "type": "list",
+      "itemMetas": [
+        {
+          "key": "image",
+          "label": "配图",
+          "type": "image"
+        }
+      ]
+    },
+    {
+      "key": "details",
+      "label": "产品细节",
+      "type": "list",
+      "itemMetas": [
+        {
+          "key": "detail",
+          "label": "细节",
+          "type": "object",
+          "itemMetas": [
+            {
+              "key": "image",
+              "label": "配图",
+              "type": "image"
+            },
+            {
+              "key": "content",
+              "label": "细节内容",
+              "type": "text"
+            }
+          ]
+      }
+      ]
+    }
+  ]
+}

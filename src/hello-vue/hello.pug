@@ -1,0 +1,117 @@
+doctype  html
+head
+	meta(charset='utf-8')
+	title Hello Pug
+body
+	include head
+	div
+		p Hello Pug
+		a(href='//www.baidu.com', title='百度一下') 百度一下
+		p.
+			line1
+			line2
+			line3 <strong>strong</strong>
+		p
+			| line1
+			| line2
+			| line3 <strong>strong</strong>
+
+		// 这个注释会被编译到HTML
+		//- 这个注释不会被编译到HTML
+
+		p.
+			line1
+		//
+			块注释
+			块注释
+		- var text='Pug'
+		p Hello #{text}
+
+		- var unescaped = '<strong>Hello</strong>'
+		p #{unescaped}
+
+		- var escaped = '<strong>Hello</strong>'
+		p !{escaped}
+
+		- var nothing = false
+		p #{nothing}
+
+		p(class=['class1', 'class2']) class
+		p(class={class3: false, class4: true}) class
+		p.class5 class
+		p#id1 id
+		.class6 class
+
+		p#id2(class='class7')&attributes({'data-url': '//www.baidu.com'})
+
+		- var number = function() {return 1}
+
+		if(number() < 0)
+			p number < 0
+		else if(number() > 5)
+			p number > 5
+		else
+			p number between (0,5)
+
+		unless number() > 1
+			p unless
+
+		- var friends = 11
+		case friends
+			when 1: p you only have 1 friend
+			when 2: p you have 2 friends
+			default: p you have a lot of friends
+		- for (var i = 0; i<3; i++)
+		p=i + 'for'
+		ul
+			each val,index in [1,2,3,4,5]
+				li #{val + 'index' + index}
+		- var object = {name: 'chow', age:22};
+		ul
+			each value, key in object
+				li=key + ':' + value
+		ul
+			each value, key in friends > 110 ? object : ''
+				li=key + ':' + value
+			else
+				li nothing
+
+		- var n = 0
+		ul
+			while n < 4
+				li=n++
+
+
+		mixin myMixin(text)
+			li.word This should be #{text}
+
+		ul
+			each n in [1,2,3]
+				+myMixin(n)
+
+		mixin article(name)
+			if block
+				block
+			else
+				p 默认内容
+
+		+article
+		p ------------------
+		+article
+			p 随便写点什么
+
+		mixin rest(name, ...others)
+			- var a = [].slice.call(arguments)
+			span=arguments[0]
+			each other in a
+				p='剩余参数是' + other
+		p ------------------
+		+rest('old_chow', 1,2,3,4,5)
+		<span>123</span>
+		label: input(type="text")/
+	script
+		include say.js
+	script.
+		(function test() {
+			alert(123)
+		})()
